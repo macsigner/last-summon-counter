@@ -145,11 +145,19 @@ h1 {
     }
 
     &::after {
+        --pg-1: linear-gradient(265deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-2: linear-gradient(5deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-3: linear-gradient(-5deg, rgba(0, 0, 0, 0.1), transparent 15%);
+        --pg-4: linear-gradient(5deg, rgba(0, 0, 0, 0.1), transparent 15%);
+        --pg-5: linear-gradient(-265deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-6: linear-gradient(-5deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-7: linear-gradient(266deg, rgba(0, 0, 0, 0.2), transparent 15%);
+
         content: '';
         position: absolute;
         inset: 0;
         z-index: 1;
-        background-image: linear-gradient(265deg, rgba(0, 0, 0, 0.2), transparent 15%), linear-gradient(5deg, rgba(0, 0, 0, 0.2), transparent 15%), linear-gradient(-5deg, rgba(0, 0, 0, 0.1), transparent 15%), linear-gradient(5deg, rgba(0, 0, 0, 0.1), transparent 15%), linear-gradient(-265deg, rgba(0, 0, 0, 0.2), transparent 15%), linear-gradient(-5deg, rgba(0, 0, 0, 0.2), transparent 15%), linear-gradient(266deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        background-image:var(--pg-1),var(--pg-2),var(--pg-3),var(--pg-4),var(--pg-5),var(--pg-6),var(--pg-7);
         background-size: 100% 33.4%;
     }
 
@@ -196,7 +204,7 @@ h1 {
         filter: contrast(100%) brightness(150%);
         background-color: #000;
         background-image: linear-gradient(0deg, var(--bg-start), var(--bg-end)),
-        url('data:image/svg+xml,%3Csvg viewBox=\'0 0 151 151\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.74\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E');
+        url('../assets/img/ground_noise.svg');
         background-size: 40rem 100%, 10rem auto;
     }
 }
