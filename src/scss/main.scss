@@ -57,8 +57,10 @@ main {
 }
 
 h1 {
+    margin: 0 0 2rem;
     text-align: center;
     color: var(--color-blood-red);
+    line-height: 1.2;
     text-shadow: .4rem .5rem .8rem rgba(white, .4);
 }
 

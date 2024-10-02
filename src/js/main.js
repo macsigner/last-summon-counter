@@ -1,4 +1,4 @@
 import '../scss/main.scss';
-import Counter from './modules/Counter.js';
+import LastSummon from './modules/LastSummon.js';
 
-new Counter();
+new LastSummon();

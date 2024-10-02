@@ -1,4 +1,4 @@
-export default class Counter {
+export default class LastSummon {
     constructor() {
         const lastSummon = new Date('2024-09-30T10:00:00');
         let days = this._getDays(lastSummon, new Date());
