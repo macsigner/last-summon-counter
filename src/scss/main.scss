@@ -99,12 +99,15 @@ h1 {
 }
 
 .wall {
+    --bg-c-1: #B00;
+    --bg-c-2: #D00;
+
     padding: 4rem;
     background-color: silver;
-    background-image: linear-gradient(335deg, #B00 23px, transparent 23px),
-    linear-gradient(155deg, #D00 23px, transparent 23px),
-    linear-gradient(335deg, #B00 23px, transparent 23px),
-    linear-gradient(155deg, #D00 23px, transparent 23px);
+    background-image: linear-gradient(335deg, var(--bg-c-1) 23px, transparent 23px),
+    linear-gradient(155deg, var(--bg-c-2) 23px, transparent 23px),
+    linear-gradient(335deg, var(--bg-c-1) 23px, transparent 23px),
+    linear-gradient(155deg, var(--bg-c-2) 23px, transparent 23px);
     background-size: 58px 58px;
     background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
 }
@@ -157,8 +160,9 @@ h1 {
         position: absolute;
         inset: 0;
         z-index: 1;
-        background-image:var(--pg-1),var(--pg-2),var(--pg-3),var(--pg-4),var(--pg-5),var(--pg-6),var(--pg-7);
+        background-image: var(--pg-1), var(--pg-2), var(--pg-3), var(--pg-4), var(--pg-5), var(--pg-6), var(--pg-7);
         background-size: 100% 33.4%;
+        pointer-events: none;
     }
 
     &__content {
@@ -189,8 +193,9 @@ h1 {
 }
 
 .floor {
-    --bg-start: rgb(30, 30, 30);
-    --bg-end: rgba(96, 96, 96, 0);
+    --fg-1: rgb(30, 30, 30);
+    --fg-2: rgb(30, 30, 30, .8);
+    --fg-3: rgba(96, 96, 96, .4);
 
     position: relative;
     padding: 3rem 1rem;
@@ -203,7 +208,7 @@ h1 {
         z-index: -1;
         filter: contrast(100%) brightness(150%);
         background-color: #000;
-        background-image: linear-gradient(0deg, var(--bg-start), var(--bg-end)),
+        background-image: linear-gradient(0deg, var(--fg-1), var(--fg-2), var(--fg-3)),
         url('../assets/img/ground_noise.svg');
         background-size: 40rem 100%, 10rem auto;
     }
