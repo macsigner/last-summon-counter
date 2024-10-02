@@ -1,0 +1,58 @@
+@import 'normalize.css';
+
+@font-face {
+    font-family: 'mood';
+    src: url('../assets/fonts/JimNightshade-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 2rem / 1.6 'mood', Serif;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    line-height: 1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.shields {
+    display: grid;
+    grid-template-columns: repeat(var(--items-amount, 4), minmax(6rem, 1fr));
+    grid-gap: 3rem;
+}
+
+.shield {
+    aspect-ratio: 4 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    font-size: 4rem;
+    line-height: 1;
+}
