@@ -3,6 +3,13 @@
 @import 'normalize.css';
 
 @font-face {
+    font-family: 'creep';
+    src: url('../assets/fonts/Creepster-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'mood';
     src: url('../assets/fonts/JimNightshade-Regular.woff2') format('woff2');
     font-weight: 400;
@@ -57,6 +64,7 @@ main {
 }
 
 h1 {
+    font-family: 'creep';
     margin: 0 0 2rem;
     text-align: center;
     color: var(--color-blood-red);
