@@ -19,6 +19,10 @@ html {
     padding: 0;
 }
 
+:root {
+    --content-margin-side: 2rem;
+}
+
 body {
     font: 2rem / 1.6 'mood', Serif;
 }
@@ -41,9 +45,18 @@ body {
     min-height: 100vh;
 }
 
+main {
+    width: calc(100% - var(--content-margin-side));
+    max-width: 80rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .shields {
+    max-width: 40rem;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(var(--items-amount, 4), minmax(6rem, 1fr));
+    grid-template-columns: repeat(var(--items-amount, 4), minmax(4rem, 1fr));
     grid-gap: 3rem;
 }
 

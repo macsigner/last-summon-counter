@@ -12,6 +12,24 @@ export default class Counter {
         days.forEach((v, i) => {
             shields[i].innerHTML = `<span class="paper">${v}</span>`;
         });
+
+        fetch('https://randomlovecraft.com/api/sentences?limit=1')
+            .then(resp => {
+                if(!resp.ok) {
+                    throw new Error('Could not fetch quote!');
+                }
+
+                return resp.json();
+            })
+            .then(json => {
+                const data = json.data[0];
+
+                this._setLetter({
+                    quote: data.sentence,
+                    author: 'H.P. Lovecraft',
+                    book: data.book.name,
+                });
+            });
     }
 
     _getDays(start, end) {
@@ -23,5 +41,18 @@ export default class Counter {
         }
 
         return count;
+    }
+
+    _setLetter(content) {
+        const letter = document.createElement('div');
+        letter.classList.add('letter');
+
+        letter.innerHTML = `
+            <dl>
+                <dt>${content.quote}</dt>
+                <dd>${content.book}<br>${content.author}</dd>
+            </dl>
+        `;
+        document.querySelector('main').appendChild(letter);
     }
 }
