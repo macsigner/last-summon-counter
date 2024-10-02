@@ -49,8 +49,10 @@ export default class Counter {
 
         letter.innerHTML = `
             <dl>
-                <dt>${content.quote}</dt>
-                <dd>${content.book}<br>${content.author}</dd>
+                <dt class="letter__content">${content.quote}</dt>
+                <dd class="letter__book">${content.book}
+                    <span class="letter__author">${content.author}</span>
+                </dd>
             </dl>
         `;
         document.querySelector('main').appendChild(letter);
