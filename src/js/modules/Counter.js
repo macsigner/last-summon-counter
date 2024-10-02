@@ -45,16 +45,16 @@ export default class Counter {
 
     _setLetter(content) {
         const letter = document.createElement('div');
-        letter.classList.add('letter');
+        letter.classList.add('letter-wrapper');
 
         letter.innerHTML = `
-            <dl>
+            <dl class="letter">
                 <dt class="letter__content">${content.quote}</dt>
                 <dd class="letter__book">${content.book}
                     <span class="letter__author">${content.author}</span>
                 </dd>
             </dl>
         `;
-        document.querySelector('main').appendChild(letter);
+        document.querySelector('.floor').appendChild(letter);
     }
 }
