@@ -75,7 +75,7 @@ h1 {
 .shields {
     max-width: 40rem;
     margin: 0 auto;
-    padding: 4rem;
+    padding: 2rem 4rem;
     display: grid;
     grid-template-columns: repeat(var(--items-amount, 4), minmax(4rem, 1fr));
     grid-gap: 3rem;
@@ -84,13 +84,46 @@ h1 {
 }
 
 .shield {
+    position: relative;
     aspect-ratio: 4 / 5;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
     font-size: 4rem;
     line-height: 1;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        width: 1rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: #424437;
+        box-shadow: .3rem -.2rem .8rem -.1rem rgba(black, .7);
+    }
+
+    &::before {
+        left: .8rem;
+    }
+
+    &::after {
+        top: .9rem;
+        right: .7rem;
+    }
+}
+
+.paper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 2.2rem;
+    background-color: antiquewhite;
+    line-height: .8;
+    box-shadow: 0 0 .3rem .1rem rgba(black, .3);
 }
 
 .floor,
@@ -103,13 +136,14 @@ h1 {
     --bg-c-2: #D00;
 
     padding: 4rem;
-    background-color: silver;
+    background-color: rgba(21, 38, 0, 0.7);
     background-image: linear-gradient(335deg, var(--bg-c-1) 23px, transparent 23px),
     linear-gradient(155deg, var(--bg-c-2) 23px, transparent 23px),
     linear-gradient(335deg, var(--bg-c-1) 23px, transparent 23px),
-    linear-gradient(155deg, var(--bg-c-2) 23px, transparent 23px);
+    linear-gradient(155deg, var(--bg-c-2) 23px, transparent 23px),
+    url('../assets/img/wood_pattern_horizontal.png');
     background-size: 58px 58px;
-    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px, 8rem 3rem;
 }
 
 .letter {
