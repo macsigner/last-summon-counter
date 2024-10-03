@@ -1,0 +1,71 @@
+@import 'normalize.css';
+
+@font-face {
+    font-family: 'creep';
+    src: url('../assets/fonts/Creepster-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mood';
+    src: url('../assets/fonts/JimNightshade-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-blood-red: #880808;
+    --content-margin-side: 2rem;
+    --trans-out: .8s;
+    --trans-in: .3s;
+}
+
+body {
+    font: 2rem / 1.6 'mood', Serif;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    line-height: 1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'creep';
+    margin: 0 0 2rem;
+    text-align: center;
+    color: var(--color-blood-red);
+    line-height: 1.2;
+    text-shadow: .4rem .5rem .8rem rgba(white, .4);
+}

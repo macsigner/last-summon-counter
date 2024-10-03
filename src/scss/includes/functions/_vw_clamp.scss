@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+@function vw-clamp($min, $max, $min-at: 600, $max-at:1280) {
+    @if math.unit($min) == 'rem' {
+        $min: math.div($min * 10, 1rem);
+    } @else if (math.unit($min) == 'px') {
+        $min: math.div($min, 1px);
+    }
+
+    @if math.unit($max) == 'rem' {
+        $max: math.div($max * 10, 1rem);
+    } @else if (math.unit($max) == 'px') {
+        $max: math.div($max, 1px);
+    }
+
+    $vwBase: math.div((100 * ($max - $min)), ($max-at - $min-at));
+    $remBase: math.div(($min-at * $max - $max-at * $min), ($min-at - $max-at));
+    $remBase: math.div($remBase, 10);
+
+    @return 'clamp(#{math.div($min, 10)}rem, #{$vwBase}vw + #{$remBase}rem, #{math.div($max, 10)}rem)';
+}

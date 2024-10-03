@@ -1,0 +1,79 @@
+.letter {
+    position: relative;
+    width: 30rem;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    font-size: 2rem;
+    box-shadow: 0 0 0 black, 0 0 6em #8A4D0F inset;
+    background-color: #FFFEF0;
+    transform: rotateX(30deg) rotateZ(10deg) scale(.4);
+    transition: transform var(--trans-out);
+    transform-style: preserve-3d;
+
+    &:hover {
+        transform: none;
+        transition-duration: var(--trans-in);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: 8rem 5rem 2rem 2rem;
+        background-color: black;
+        box-shadow: -.4rem -.2rem 2rem .4rem rgba(black, .5), .2rem 0 1rem .4rem rgba(black, .3);
+        transition: box-shadow var(--trans-out);
+        transform: translateZ(-1px);
+        backface-visibility: hidden;
+    }
+
+    &:hover::before {
+        box-shadow: -.4rem -.2rem 5rem 0 rgba(black, .01);
+        transition-duration: var(--trans-in);
+    }
+
+    &::after {
+        --pg-1: linear-gradient(265deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-2: linear-gradient(5deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-3: linear-gradient(-5deg, rgba(0, 0, 0, 0.1), transparent 15%);
+        --pg-4: linear-gradient(5deg, rgba(0, 0, 0, 0.1), transparent 15%);
+        --pg-5: linear-gradient(-265deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-6: linear-gradient(-5deg, rgba(0, 0, 0, 0.2), transparent 15%);
+        --pg-7: linear-gradient(266deg, rgba(0, 0, 0, 0.2), transparent 15%);
+
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: var(--pg-1), var(--pg-2), var(--pg-3), var(--pg-4), var(--pg-5), var(--pg-6), var(--pg-7);
+        background-size: 100% 33.4%;
+        pointer-events: none;
+    }
+
+    &__content {
+        margin-bottom: 3rem;
+    }
+
+    &__book {
+        text-align: right;
+    }
+
+    &__author {
+        display: block;
+        margin-top: .4rem;
+        text-align: right;
+        color: var(--color-blood-red);
+        transform: rotate(-4deg);
+    }
+}
+
+.letter-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform-style: preserve-3d;
+    perspective: 40em;
+    transform: translate(-50%, -50%);
+}

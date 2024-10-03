@@ -1,0 +1,39 @@
+@use 'sass:math';
+
+.pentagram {
+    position: relative;
+    width: 40rem;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border: 2rem solid var(--color-blood-red);
+    border-radius: 50%;
+    transform-origin: 50% 0;
+    transform: rotateX(30deg);
+
+    &__line {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    &__line::after {
+        content: '';
+        position: absolute;
+        bottom: 4.4rem;
+        width: 36rem;
+        height: 2rem;
+        background-color: var(--color-blood-red);
+        transform: translate(-50%, -50%);
+    }
+
+    @for $i from 1 through 5 {
+        &__line:nth-child(#{$i}) {
+            transform: rotate(#{math.div(360deg, 5) * $i});
+        }
+    }
+}
+
+.pentagram-wrapper {
+    perspective: 50em;
+    transform-style: preserve-3d;
+}
