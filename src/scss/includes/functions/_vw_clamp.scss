@@ -19,3 +19,7 @@
 
     @return 'clamp(#{math.div($min, 10)}rem, #{$vwBase}vw + #{$remBase}rem, #{math.div($max, 10)}rem)';
 }
+
+@function base-clamp($min) {
+    @return vw-clamp($min, $min * 2);
+}

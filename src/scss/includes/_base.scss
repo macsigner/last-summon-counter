@@ -57,7 +57,8 @@ body {
 
 h1 {
     font-family: 'creep';
-    margin: 0 0 2rem;
+    font-size: #{vw-clamp(4rem, 6rem)};
+    margin: 0 0 #{base-clamp(2rem)};
     text-align: center;
     color: var(--color-blood-red);
     line-height: 1.2;

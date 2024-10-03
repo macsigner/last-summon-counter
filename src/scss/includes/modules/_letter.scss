@@ -1,9 +1,9 @@
 .letter {
     position: relative;
-    width: 30rem;
+    width: #{base-clamp(30rem)};
     margin: 0 auto;
-    padding: 3rem 2rem;
-    font-size: 2rem;
+    padding: #{base-clamp(3rem)} #{base-clamp(2rem)};
+    font-size: #{base-clamp(2rem)};
     box-shadow: 0 0 0 black, 0 0 6em #8A4D0F inset;
     background-color: #FFFEF0;
     transform: rotateX(30deg) rotateZ(10deg) scale(.4);
@@ -21,7 +21,7 @@
         position: absolute;
         inset: 0;
         z-index: -1;
-        border-radius: 8rem 5rem 2rem 2rem;
+        border-radius: #{base-clamp(8rem)} #{base-clamp(5rem)} #{base-clamp(2rem)} #{base-clamp(2rem)};
         background-color: black;
         box-shadow: -.4rem -.2rem 2rem .4rem rgba(black, .5), .2rem 0 1rem .4rem rgba(black, .3);
         transition: box-shadow var(--trans-out);
@@ -62,7 +62,7 @@
 
     &__author {
         display: block;
-        margin-top: .4rem;
+        margin-top: #{base-clamp(.4rem)};
         text-align: right;
         color: var(--color-blood-red);
         transform: rotate(-4deg);
@@ -75,7 +75,7 @@
     left: 50%;
     z-index: 10;
     transform-style: preserve-3d;
-    perspective: 40em;
+    perspective: #{base-clamp(40em)};
     transform: translate(-50%, -50%);
     pointer-events: none;
 }

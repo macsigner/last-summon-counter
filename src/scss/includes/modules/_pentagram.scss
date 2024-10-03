@@ -2,10 +2,10 @@
 
 .pentagram {
     position: relative;
-    width: 40rem;
+    width: #{base-clamp(40rem)};
     margin: 0 auto;
     aspect-ratio: 1;
-    border: 2rem solid var(--color-blood-red);
+    border: #{base-clamp(2rem)} solid var(--color-blood-red);
     border-radius: 50%;
     transform-origin: 50% 0;
     transform: rotateX(30deg);
@@ -25,9 +25,9 @@
     &__line::after {
         content: '';
         position: absolute;
-        bottom: 4.4rem;
-        width: 36rem;
-        height: 2rem;
+        bottom: #{base-clamp(4.4rem)};
+        width: #{base-clamp(36rem)};
+        height: #{base-clamp(2rem)};
         background-color: var(--color-blood-red);
         transform: translate(-50%, -50%);
     }
@@ -40,6 +40,6 @@
 }
 
 .pentagram-wrapper {
-    perspective: 50em;
+    perspective: #{base-clamp(50em)};
     transform-style: preserve-3d;
 }

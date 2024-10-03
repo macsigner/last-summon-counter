@@ -1,9 +1,9 @@
 .board {
-    max-width: 40rem;
+    max-width: #{base-clamp(40rem)};
     margin: 0 auto;
-    padding: 2rem 4rem;
+    padding: #{base-clamp(2rem)} #{base-clamp(4rem)};
     display: grid;
-    grid-template-columns: repeat(var(--items-amount, 4), minmax(4rem, 1fr));
+    grid-template-columns: repeat(var(--items-amount, 4), minmax(#{base-clamp(4rem)}, 1fr));
     grid-gap: 3rem;
     background-image: url('../assets/img/wood_pattern_horizontal.png');
     background-color: #613535;
@@ -16,7 +16,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 4rem;
+        font-size: #{base-clamp(4rem)};
         line-height: 1;
 
         &::before,
@@ -24,7 +24,7 @@
             content: '';
             position: absolute;
             top: .4rem;
-            width: 1rem;
+            width: #{vw-clamp(.8rem, 1.4rem)};
             aspect-ratio: 1;
             border-radius: 50%;
             background-color: #424437;
