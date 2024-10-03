@@ -28,6 +28,7 @@ html {
 
 :root {
     --color-blood-red: #880808;
+    --color-off-white: antiquewhite;
     --content-margin-side: 2rem;
     --trans-out: .8s;
     --trans-in: .3s;
@@ -61,4 +62,9 @@ h1 {
     color: var(--color-blood-red);
     line-height: 1.2;
     text-shadow: .4rem .5rem .8rem rgba(white, .4);
+}
+
+::selection {
+    color: var(--color-off-white);
+    background-color: var(--color-blood-red);
 }

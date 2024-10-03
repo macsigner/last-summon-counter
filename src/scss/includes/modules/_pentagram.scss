@@ -9,6 +9,12 @@
     border-radius: 50%;
     transform-origin: 50% 0;
     transform: rotateX(30deg);
+    filter: drop-shadow(0 0 .4rem var(--color-blood-red));
+    transition: filter var(--trans-out);
+
+    &:hover {
+        filter: drop-shadow(0 0 2rem var(--color-blood-red));
+    }
 
     &__line {
         position: absolute;

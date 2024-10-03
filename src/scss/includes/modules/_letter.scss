@@ -9,6 +9,7 @@
     transform: rotateX(30deg) rotateZ(10deg) scale(.4);
     transition: transform var(--trans-out);
     transform-style: preserve-3d;
+    pointer-events: all;
 
     &:hover {
         transform: none;
@@ -76,4 +77,5 @@
     transform-style: preserve-3d;
     perspective: 40em;
     transform: translate(-50%, -50%);
+    pointer-events: none;
 }
