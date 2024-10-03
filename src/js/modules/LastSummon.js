@@ -3,14 +3,14 @@ export default class LastSummon {
         const lastSummon = new Date('2024-10-03T10:00:00');
         let days = this._getDays(lastSummon, new Date());
 
-        const shields = Array.from(document.querySelectorAll('.shield'));
-        shields.reverse();
+        const boardItems = Array.from(document.querySelectorAll('.board__item'));
+        boardItems.reverse();
 
         days = days.toString().split('');
         days.reverse();
 
         days.forEach((v, i) => {
-            shields[i].innerHTML = `<span class="paper">${v}</span>`;
+            boardItems[i].innerHTML = `<span class="paper">${v}</span>`;
         });
 
         fetch('https://randomlovecraft.com/api/sentences?limit=1')
@@ -55,6 +55,6 @@ export default class LastSummon {
                 </dd>
             </dl>
         `;
-        document.querySelector('.floor').appendChild(letter);
+        document.querySelector('.room__floor').appendChild(letter);
     }
 }

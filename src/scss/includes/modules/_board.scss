@@ -1,8 +1,4 @@
 .board {
-
-}
-
-.shields {
     max-width: 40rem;
     margin: 0 auto;
     padding: 2rem 4rem;
@@ -11,35 +7,37 @@
     grid-gap: 3rem;
     background-image: url('../assets/img/wood_pattern_horizontal.png');
     background-color: #613535;
-}
+    box-shadow: .6rem .4rem 1.4rem .3rem rgba(black, .7);
+    transform: rotate(1deg);
 
-.shield {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4rem;
-    line-height: 1;
+    &__item {
+        position: relative;
+        aspect-ratio: 4 / 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        line-height: 1;
 
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        top: 1rem;
-        width: 1rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background-color: #424437;
-        box-shadow: .3rem -.2rem .8rem -.1rem rgba(black, .7);
-    }
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: .4rem;
+            width: 1rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #424437;
+            box-shadow: .3rem -.2rem .8rem -.1rem rgba(black, .7);
+        }
 
-    &::before {
-        left: .8rem;
-    }
+        &::before {
+            left: .4rem;
+        }
 
-    &::after {
-        top: .9rem;
-        right: .7rem;
+        &::after {
+            top: .5rem;
+            right: .3rem;
+        }
     }
 }
