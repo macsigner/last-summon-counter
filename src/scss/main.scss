@@ -128,7 +128,18 @@ h1 {
 
 .floor,
 .wall {
+    position: relative;
     flex: 1 0 50%;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background-image: radial-gradient(closest-side, transparent, rgba(black, .2), rgba(black, .7));
+        box-shadow: .6rem -.6rem 1rem black inset;
+    }
 }
 
 .wall {
