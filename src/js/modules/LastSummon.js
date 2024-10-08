@@ -1,6 +1,6 @@
 export default class LastSummon {
     constructor() {
-        const lastSummon = new Date('2024-10-03T10:00:00');
+        const lastSummon = new Date('2024-10-08T08:00:00');
         let days = this._getDays(lastSummon, new Date());
 
         const boardItems = Array.from(document.querySelectorAll('.board__item'));
