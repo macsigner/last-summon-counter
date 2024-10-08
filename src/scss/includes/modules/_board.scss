@@ -24,6 +24,7 @@
             content: '';
             position: absolute;
             top: .4rem;
+            z-index: 1;
             width: #{vw-clamp(.8rem, 1.4rem)};
             aspect-ratio: 1;
             border-radius: 50%;

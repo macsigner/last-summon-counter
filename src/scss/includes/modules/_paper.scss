@@ -6,6 +6,12 @@
     height: 100%;
     padding-top: #{base-clamp(1rem)};
     background-color: var(--color-off-white);
-    line-height: .8;
-    box-shadow: 0 0 .3rem .1rem rgba(black, .3);
+    box-shadow: .2rem .8rem 1rem -.2rem rgba(black, 1);
+    transform: rotate(calc(-3deg + (var(--rand, 0) * 6deg)));
+    transform-origin: 50% 1rem;
+
+    &__inner {
+        display: block;
+        line-height: .8;
+    }
 }

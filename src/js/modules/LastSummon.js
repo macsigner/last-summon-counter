@@ -9,8 +9,12 @@ export default class LastSummon {
         days = days.toString().split('');
         days.reverse();
 
+
         days.forEach((v, i) => {
-            boardItems[i].innerHTML = `<span class="paper">${v}</span>`;
+            boardItems[i].innerHTML = `
+                <span class="paper" style="--rand:${Math.random()}">
+                    <span class="paper__inner">${v}</span>
+                </span>`;
         });
 
         fetch('https://randomlovecraft.com/api/sentences?limit=1')
