@@ -2,13 +2,13 @@
 
 .pentagram {
     position: relative;
-    width: #{base-clamp(40rem)};
-    margin: 0 auto;
+    width: #{base-clamp(30rem)};
+    margin: 0 auto #{base-clamp(-6rem)};
     aspect-ratio: 1;
-    border: #{base-clamp(2rem)} solid var(--color-blood-red);
+    border: #{base-clamp(1.5rem)} solid var(--color-blood-red);
     border-radius: 50%;
     transform-origin: 50% 0;
-    transform: rotateX(30deg);
+    transform: rotateX(40deg);
     filter: drop-shadow(0 0 .4rem var(--color-blood-red));
     transition: filter var(--trans-out);
 
@@ -25,9 +25,9 @@
     &__line::after {
         content: '';
         position: absolute;
-        bottom: #{base-clamp(4.4rem)};
-        width: #{base-clamp(36rem)};
-        height: #{base-clamp(2rem)};
+        bottom: #{base-clamp(3.3rem)};
+        width: #{base-clamp(27rem)};
+        height: #{base-clamp(1.5rem)};
         background-color: var(--color-blood-red);
         transform: translate(-50%, -50%);
     }
@@ -40,6 +40,6 @@
 }
 
 .pentagram-wrapper {
-    perspective: #{base-clamp(50em)};
+    perspective: #{base-clamp(37.5em)};
     transform-style: preserve-3d;
 }

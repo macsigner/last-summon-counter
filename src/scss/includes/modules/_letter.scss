@@ -1,12 +1,12 @@
 .letter {
     position: relative;
-    width: #{base-clamp(30rem)};
+    width: #{base-clamp(24rem)};
     margin: 0 auto;
     padding: #{base-clamp(3rem)} #{base-clamp(2rem)};
-    font-size: #{base-clamp(2rem)};
+    font-size: #{base-clamp(1.6rem)};
     box-shadow: 0 0 0 black, 0 0 6em #8A4D0F inset;
     background-color: #FFFEF0;
-    transform: rotateX(30deg) rotateZ(10deg) scale(.4);
+    transform: rotateX(30deg) rotateX(15deg) rotateZ(10deg) scale(.25);
     transition: transform var(--trans-out);
     transform-style: preserve-3d;
     pointer-events: all;
@@ -65,7 +65,7 @@
         margin-top: #{base-clamp(.4rem)};
         text-align: right;
         color: var(--color-blood-red);
-        transform: rotate(-4deg);
+        transform: rotate(-4deg) skewY(-1deg);
     }
 }
 

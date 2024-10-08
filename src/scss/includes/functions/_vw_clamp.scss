@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-@function vw-clamp($min, $max, $min-at: 600, $max-at:1280) {
+@function vw-clamp($min, $max, $min-at: 600, $max-at:2200) {
     @if math.unit($min) == 'rem' {
         $min: math.div($min * 10, 1rem);
     } @else if (math.unit($min) == 'px') {
@@ -16,8 +16,15 @@
     $vwBase: math.div((100 * ($max - $min)), ($max-at - $min-at));
     $remBase: math.div(($min-at * $max - $max-at * $min), ($min-at - $max-at));
     $remBase: math.div($remBase, 10);
+    $small: $min;
+    $large: $max;
 
-    @return 'clamp(#{math.div($min, 10)}rem, #{$vwBase}vw + #{$remBase}rem, #{math.div($max, 10)}rem)';
+    @if ($min > $max) {
+        $small: $max;
+        $large: $min;
+    }
+
+    @return 'clamp(#{math.div($small, 10)}rem, #{$vwBase}vw + #{$remBase}rem, #{math.div($large, 10)}rem)';
 }
 
 @function base-clamp($min) {
