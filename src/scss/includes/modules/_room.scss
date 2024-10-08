@@ -40,9 +40,9 @@
     }
 
     &__floor {
-        --fg-1: rgb(30, 30, 30);
+        --fg-1: rgba(96, 96, 96, .4);
         --fg-2: rgb(30, 30, 30, .8);
-        --fg-3: rgba(96, 96, 96, .4);
+        --fg-3: rgb(30, 30, 30);
 
         position: relative;
         padding: #{base-clamp(3rem)} 1rem 1rem;
@@ -53,7 +53,6 @@
             position: absolute;
             inset: 0;
             z-index: -1;
-            filter: contrast(100%) brightness(150%);
             background-color: #000;
             background-image: linear-gradient(0deg, var(--fg-1), var(--fg-2), var(--fg-3)),
             url('../assets/img/ground_noise.svg');
