@@ -57,12 +57,17 @@ body {
 
 h1 {
     font-family: 'creep';
-    font-size: #{vw-clamp(4rem, 6rem)};
+    font-size: #{vw-clamp(5rem, 12rem)};
     margin: 0 0 #{base-clamp(1.5rem)};
     text-align: center;
-    color: var(--color-blood-red);
+    color: transparent;
     line-height: 1.2;
-    text-shadow: .4rem .5rem .8rem rgba(white, .4);
+    background-clip: text;
+    background-color: var(--color-blood-red);
+
+    &:hover {
+        background-position: 200% 50%;
+    }
 }
 
 ::selection {

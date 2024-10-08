@@ -40,6 +40,7 @@
 }
 
 .pentagram-wrapper {
-    perspective: #{base-clamp(37.5em)};
+    perspective: #{base-clamp(60rem)};
+    perspective-origin: 50% 100%;
     transform-style: preserve-3d;
 }

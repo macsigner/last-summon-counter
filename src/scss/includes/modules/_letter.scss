@@ -75,7 +75,7 @@
     left: 50%;
     z-index: 10;
     transform-style: preserve-3d;
-    perspective: #{base-clamp(40em)};
+    perspective: #{base-clamp(60rem)};
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
