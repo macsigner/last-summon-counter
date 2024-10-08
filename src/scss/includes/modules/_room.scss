@@ -30,13 +30,13 @@
 
         padding: #{base-clamp(4rem)} 1rem #{vw-clamp(8rem, 20rem)};
         background-color: rgba(21, 38, 0, 0.7);
-        background-image: linear-gradient(335deg, var(--bg-c-1) 23px, transparent 23px),
-        linear-gradient(155deg, var(--bg-c-2) 23px, transparent 23px),
-        linear-gradient(335deg, var(--bg-c-1) 23px, transparent 23px),
-        linear-gradient(155deg, var(--bg-c-2) 23px, transparent 23px),
+        background-image: linear-gradient(335deg, var(--bg-c-1) 2.3rem, transparent 3rem),
+        linear-gradient(155deg, var(--bg-c-2) 2.3rem, transparent 3rem),
+        linear-gradient(335deg, var(--bg-c-1) 2.3rem, transparent 3rem),
+        linear-gradient(155deg, var(--bg-c-2) 2.3rem, transparent 3rem),
         url('../assets/img/wood_pattern_horizontal.png');
         background-size: 58px 58px;
-        background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px, 8rem 3rem;
+        background-position: 0 .2rem, .4rem 3.5rem, 2.9rem 3.1rem, 3.4rem .6rem, 8rem 3rem;
     }
 
     &__floor {
