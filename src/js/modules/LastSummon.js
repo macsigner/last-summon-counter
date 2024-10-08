@@ -1,6 +1,6 @@
 export default class LastSummon {
     constructor() {
-        const lastSummon = new Date('2024-10-03T10:00:00');
+        const lastSummon = new Date('2024-10-08T08:00:00');
         let days = this._getDays(lastSummon, new Date());
 
         const boardItems = Array.from(document.querySelectorAll('.board__item'));
@@ -38,9 +38,11 @@ export default class LastSummon {
 
     _getDays(start, end) {
         let count = 0;
+        let startDate = new Date(start);
+        startDate = startDate.setDate(startDate.getDate() + 1);
         const endDate = new Date(end);
 
-        for(let date = new Date(start); date < endDate; date.setDate(date.getDate() + 1)) {
+        for(let date = new Date(startDate); date < endDate; date.setDate(date.getDate() + 1)) {
             count++;
         }
 
