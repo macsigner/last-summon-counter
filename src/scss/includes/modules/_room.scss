@@ -1,8 +1,24 @@
 .room {
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 11;
+        opacity: 1;
+        pointer-events: none;
+        background-image: radial-gradient(circle at 50% 12%, transparent, black 12%, black);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        animation: wallLight 3s .8s both linear;
+        transform-origin: 50% 25%;
+    }
 
     &__floor,
     &__wall {
@@ -58,5 +74,18 @@
             url('../assets/img/ground_noise.svg');
             background-size: 40rem 100%, 10rem auto;
         }
+    }
+}
+
+@keyframes wallLight {
+    60% {
+        opacity: 1;
+        transform: scale(2);
+        transform-origin: 50% 5%;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(3);
     }
 }
