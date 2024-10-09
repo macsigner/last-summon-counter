@@ -64,6 +64,9 @@ h1 {
     line-height: 1.2;
     background-clip: text;
     background-color: var(--color-blood-red);
+    opacity: 0;
+    transform: scaleX(.9);
+    animation: fadeIn 1.2s .4s both linear;
 
     &:hover {
         background-position: 200% 50%;
@@ -73,4 +76,11 @@ h1 {
 ::selection {
     color: var(--color-off-white);
     background-color: var(--color-blood-red);
+}
+
+@keyframes fadeIn {
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
 }
