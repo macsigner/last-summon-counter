@@ -11,7 +11,7 @@
     transform-style: preserve-3d;
     pointer-events: all;
 
-    &:hover {
+    &.touched {
         transform: none;
         transition-duration: var(--trans-in);
     }
@@ -71,11 +71,16 @@
 
 .letter-wrapper {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     z-index: 10;
     transform-style: preserve-3d;
     perspective: #{base-clamp(60rem)};
     transform: translate(-50%, -50%);
     pointer-events: none;
+    transition: top var(--trans-in);
+
+    &:has(.letter.touched) {
+        top: 50%;
+    }
 }

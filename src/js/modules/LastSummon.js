@@ -1,3 +1,5 @@
+import {delegate} from '../utils/toosl.js';
+
 export default class LastSummon {
     constructor() {
         const lastSummon = new Date('2024-10-08T08:00:00');
@@ -19,7 +21,7 @@ export default class LastSummon {
 
         fetch('https://randomlovecraft.com/api/sentences?limit=1')
             .then(resp => {
-                if(!resp.ok) {
+                if (!resp.ok) {
                     throw new Error('Could not fetch quote!');
                 }
 
@@ -34,6 +36,20 @@ export default class LastSummon {
                     book: data.book.name,
                 });
             });
+
+        document.addEventListener('click', delegate('.letter', e => {
+            const letter = e.target.closest('.letter');
+
+            letter.classList.add('touched');
+        }));
+
+        document.addEventListener('click', e => {
+            if(e.target.closest('.letter')) {
+                return;
+            }
+
+            document.querySelectorAll('.letter').forEach(el => el.classList.remove('touched'))
+        });
     }
 
     _getDays(start, end) {
@@ -42,7 +58,7 @@ export default class LastSummon {
         startDate = startDate.setDate(startDate.getDate() + 1);
         const endDate = new Date(end);
 
-        for(let date = new Date(startDate); date < endDate; date.setDate(date.getDate() + 1)) {
+        for (let date = new Date(startDate); date < endDate; date.setDate(date.getDate() + 1)) {
             count++;
         }
 
@@ -61,6 +77,6 @@ export default class LastSummon {
                 </dd>
             </dl>
         `;
-        document.querySelector('.room__floor').appendChild(letter);
+        document.querySelector('.room').appendChild(letter);
     }
 }
