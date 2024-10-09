@@ -76,11 +76,19 @@
     z-index: 10;
     transform-style: preserve-3d;
     perspective: #{base-clamp(60rem)};
+    opacity: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
     transition: top var(--trans-in);
+    animation: letterIn 1.4s ease-in both;
 
     &:has(.letter.touched) {
         top: 50%;
+    }
+}
+
+@keyframes letterIn {
+    to {
+        opacity: 1;
     }
 }
