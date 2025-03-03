@@ -1,16 +1,17 @@
 import {delegate} from '../utils/toosl.js';
+import Summon from './Summon.js';
 
 export default class LastSummon {
     constructor() {
         const lastSummon = new Date('2024-10-08T08:00:00');
         let days = this._getDays(lastSummon, new Date());
+        this.days = days;
 
         const boardItems = Array.from(document.querySelectorAll('.board__item'));
         boardItems.reverse();
 
         days = days.toString().split('');
         days.reverse();
-
 
         days.forEach((v, i) => {
             boardItems[i].innerHTML = `
@@ -35,6 +36,9 @@ export default class LastSummon {
                     author: 'H.P. Lovecraft',
                     book: data.book.name,
                 });
+
+                this.collectedQutoes.push(data.id);
+                this._saveQuotes();
             });
 
         document.addEventListener('click', delegate('.letter', e => {
@@ -50,6 +54,8 @@ export default class LastSummon {
 
             document.querySelectorAll('.letter').forEach(el => el.classList.remove('touched'))
         });
+
+        this.collectedQutoes = localStorage.getItem('quoteIds') ? JSON.parse(localStorage.getItem('quoteIds')) : [];
     }
 
     _getDays(start, end) {
@@ -78,5 +84,13 @@ export default class LastSummon {
             </dl>
         `;
         document.querySelector('.room').appendChild(letter);
+    }
+
+    _saveQuotes() {
+        localStorage.setItem('quoteIds', JSON.stringify(this.collectedQutoes));
+
+        if(this.collectedQutoes.length % this.days === 0) {
+            new Summon();
+        }
     }
 }
